@@ -48,24 +48,28 @@ public class ObjectCreator {
                 System.out.println("Enter the height : ");
                 double lorryHeight = sc.nextDouble();
                 new Lorry(plateID, brand, model, entryTime, lorryCargoCapacity, lorryHeight);
+                break;
             case MiniLorry:
                 System.out.println("Enter the Cargo Capacity : ");
                 double miniLorryCargoCapacity = sc.nextDouble();
                 System.out.println("Enter the height : ");
                 double miniLorryHeight = sc.nextDouble();
-                new Lorry(plateID, brand, model, entryTime, miniLorryCargoCapacity, miniLorryHeight);
+                new MiniLorry(plateID, brand, model, entryTime, miniLorryCargoCapacity, miniLorryHeight);
+                break;
             case Bus:
                 System.out.println("Enter the number of seats : ");
                 int busSeats = sc.nextInt();
                 System.out.println("Enter the height : ");
                 double busHeight = sc.nextDouble();
                 new Bus(plateID, brand, model, entryTime, busSeats, busHeight);
+                break;
             case MiniBus:
                 System.out.println("Enter the number of seats : ");
                 int miniBusSeats = sc.nextInt();
                 System.out.println("Enter the height : ");
                 double miniBusHeight = sc.nextDouble();
                 new MiniBus(plateID, brand, model, entryTime, miniBusSeats, miniBusHeight);
+                break;
             default:
                 System.out.println("Invalid Choice");
         }
