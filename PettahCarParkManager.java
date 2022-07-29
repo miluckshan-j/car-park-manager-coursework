@@ -7,11 +7,15 @@ public class PettahCarParkManager implements CarParkManager {
     // Properties
     private static PettahCarParkManager instance = null;
     private final ArrayList<Vehicle> listOfVehicle = new ArrayList<Vehicle>();
+
+    // Charging
     private final double chargePerHour = 50;
     private final double addCharge = 75;
     private final double maxCharge = 1200;
     private final int addFromthisHour = 3;
-    //    TODO: Check if causes issues. Custom added.
+
+    // Parking Specifics
+    // TODO: Check if causes issues. Custom added.
     private final int carParkCapacity = 540; // 60 x 9 floors
     private int availableSlots = carParkCapacity;
 

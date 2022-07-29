@@ -54,6 +54,12 @@ public class ObjectCreator {
                 System.out.println("Enter the height : ");
                 double miniLorryHeight = sc.nextDouble();
                 new Lorry(plateID, brand, model, entryTime, miniLorryCargoCapacity, miniLorryHeight);
+            case Bus:
+                System.out.println("Enter the number of seats : ");
+                int busSeats = sc.nextInt();
+                System.out.println("Enter the height : ");
+                double busHeight = sc.nextDouble();
+                new Bus(plateID, brand, model, entryTime, busSeats, busHeight);
             case MiniBus:
                 System.out.println("Enter the number of seats : ");
                 int miniBusSeats = sc.nextInt();

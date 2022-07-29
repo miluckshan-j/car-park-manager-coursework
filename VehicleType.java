@@ -4,5 +4,6 @@ public enum VehicleType {
     MotorBike,
     Lorry,
     MiniLorry,
+    Bus,
     MiniBus
 }

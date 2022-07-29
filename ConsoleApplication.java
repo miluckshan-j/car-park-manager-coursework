@@ -103,13 +103,14 @@ public class ConsoleApplication {
         System.out.println("3. To add a Van.");
         System.out.println("4. To add a Lorry.");
         System.out.println("5. To add a Mini Lorry.");
-        System.out.println("6. To add a Mini Bus.");
+        System.out.println("6. To add a Bus.");
+        System.out.println("7. To add a Mini Bus.");
         System.out.println(">>>>");
 
         Scanner sc = new Scanner(System.in);
         int choice = sc.nextInt();
         // TODO: Use switch case
-        VehicleType type = (choice == 1) ? VehicleType.Car : (choice == 2) ? VehicleType.MotorBike : (choice == 3) ? VehicleType.Van : (choice == 4) ? VehicleType.Lorry : (choice == 5) ? VehicleType.MiniLorry : (choice == 6) ? VehicleType.MiniBus : null;
+        VehicleType type = (choice == 1) ? VehicleType.Car : (choice == 2) ? VehicleType.MotorBike : (choice == 3) ? VehicleType.Van : (choice == 4) ? VehicleType.Lorry : (choice == 5) ? VehicleType.MiniLorry : (choice == 6) ? VehicleType.Bus : (choice == 7) ? VehicleType.MiniBus : null;
         ObjectCreator creator = new ObjectCreator();
         Vehicle vehicle = creator.createVehicle(type);
         pettahCarParkManager.addVehicle(vehicle);
