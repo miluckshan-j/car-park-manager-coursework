@@ -19,6 +19,15 @@ public class PettahCarParkManager implements CarParkManager {
     private final int carParkCapacity = 540; // 60 x 9 floors
     private int availableSlots = carParkCapacity;
 
+    // Space Allocations
+    private final int SPACE_FOR_CAR = 1;
+    private final int SPACE_FOR_VAN = 2;
+    private final int SPACE_FOR_MOTOR_BIKE = 1; // TODO: Assuming 1 per slot. Change to 3 per slot
+    private final int SPACE_FOR_LORRY = 5;
+    private final int SPACE_FOR_MINI_LORRY = 3;
+    private final int SPACE_FOR_BUS = 5;
+    private final int SPACE_FOR_MINI_BUS = 3;
+
     // Private Constructor
     private PettahCarParkManager() {
     }
@@ -37,7 +46,7 @@ public class PettahCarParkManager implements CarParkManager {
 
     @Override
     public void addVehicle(Vehicle obj) {
-        //check whether the vehicle is already parked or not
+        // Check whether the vehicle is already parked or not
         for (Vehicle item : listOfVehicle) {
             if (item.equals(obj)) {
                 System.out.println("This vehicle is already parked.");
@@ -46,23 +55,99 @@ public class PettahCarParkManager implements CarParkManager {
         }
         // Check whether there are sufficient space available for any vehicle to park
         if (listOfVehicle.size() < carParkCapacity) {
+            if (obj instanceof Car) {
+                if (availableSlots > SPACE_FOR_CAR) {
+                    try {
+                        listOfVehicle.add(obj);
+                        availableSlots = availableSlots - SPACE_FOR_CAR;
+                        System.out.println("Available slots : " + availableSlots + "\n");
+                    } catch (Exception e) {
+                        System.out.println("Error: " + e);
+                    }
+                } else {
+                    System.out.println("Sorry... There are no slots available to park your Car." + "\n");
+                }
+            }
             if (obj instanceof Van) {
-                // TODO: Change to availableSlots > VAN_SPACE
-                if (listOfVehicle.size() < 19) {
-                    listOfVehicle.add(obj);
-                    availableSlots -= 2;
-                    System.out.println("Available slots : " + availableSlots + "\n");
+                if (availableSlots > SPACE_FOR_VAN) {
+                    try {
+                        listOfVehicle.add(obj);
+                        availableSlots = availableSlots - SPACE_FOR_VAN;
+                        System.out.println("Available slots : " + availableSlots + "\n");
+                    } catch (Exception e) {
+                        System.out.println("Error: " + e);
+                    }
                 } else {
                     System.out.println("Sorry... There are no slots available to park your Van." + "\n");
                 }
             }
-            if (obj instanceof MotorBike || obj instanceof Car) {
-                listOfVehicle.add(obj);
-                availableSlots--;
-                System.out.println("Available slots : " + availableSlots + "\n");
+            if (obj instanceof MotorBike) {
+                if (availableSlots > SPACE_FOR_MOTOR_BIKE) {
+                    try {
+                        listOfVehicle.add(obj);
+                        availableSlots = availableSlots - SPACE_FOR_MOTOR_BIKE;
+                        System.out.println("Available slots : " + availableSlots + "\n");
+                    } catch (Exception e) {
+                        System.out.println("Error: " + e);
+                    }
+                } else {
+                    System.out.println("Sorry... There are no slots available to park your Motor Bike." + "\n");
+                }
+            }
+            if (obj instanceof Lorry) {
+                if (availableSlots > SPACE_FOR_LORRY) {
+                    try {
+                        listOfVehicle.add(obj);
+                        availableSlots = availableSlots - SPACE_FOR_LORRY;
+                        System.out.println("Available slots : " + availableSlots + "\n");
+                    } catch (Exception e) {
+                        System.out.println("Error: " + e);
+                    }
+                } else {
+                    System.out.println("Sorry... There are no slots available to park your Lorry." + "\n");
+                }
+            }
+            if (obj instanceof MiniLorry) {
+                if (availableSlots > SPACE_FOR_MINI_LORRY) {
+                    try {
+                        listOfVehicle.add(obj);
+                        availableSlots = availableSlots - SPACE_FOR_MINI_LORRY;
+                        System.out.println("Available slots : " + availableSlots + "\n");
+                    } catch (Exception e) {
+                        System.out.println("Error: " + e);
+                    }
+                } else {
+                    System.out.println("Sorry... There are no slots available to park your Mini Lorry." + "\n");
+                }
+            }
+            if (obj instanceof Bus) {
+                if (availableSlots > SPACE_FOR_BUS) {
+                    try {
+                        listOfVehicle.add(obj);
+                        availableSlots = availableSlots - SPACE_FOR_BUS;
+                        System.out.println("Available slots : " + availableSlots + "\n");
+                    } catch (Exception e) {
+                        System.out.println("Error: " + e);
+                    }
+                } else {
+                    System.out.println("Sorry... There are no slots available to park your Bus." + "\n");
+                }
+            }
+            if (obj instanceof MiniBus) {
+                if (availableSlots > SPACE_FOR_MINI_BUS) {
+                    try {
+                        listOfVehicle.add(obj);
+                        availableSlots = availableSlots - SPACE_FOR_MINI_BUS;
+                        System.out.println("Available slots : " + availableSlots + "\n");
+                    } catch (Exception e) {
+                        System.out.println("Error: " + e);
+                    }
+                } else {
+                    System.out.println("Sorry... There are no slots available to park your Mini Bus." + "\n");
+                }
             }
         } else {
-            System.out.println("Sorry... There are not space available for parking...");
+            System.out.println("Sorry... There are no space available for parking...");
         }
     }
 
