@@ -15,8 +15,7 @@ public class PettahCarParkManager implements CarParkManager {
     private final int addFromthisHour = 3;
 
     // Parking Specifics
-    // TODO: Check if causes issues. Custom added.
-    private final int carParkCapacity = 540; // 60 x 9 floors
+    private final int carParkCapacity = 60; // Assuming only ground floor
     private int availableSlots = carParkCapacity;
 
     // Space Allocations
@@ -28,8 +27,8 @@ public class PettahCarParkManager implements CarParkManager {
     private final int SPACE_FOR_BUS = 5;
     private final int SPACE_FOR_MINI_BUS = 3;
 
-    // Private Constructor
-    private PettahCarParkManager() {
+    // Constructor
+    public PettahCarParkManager() {
     }
 
     // Method which returns an object of same type
@@ -59,7 +58,7 @@ public class PettahCarParkManager implements CarParkManager {
                 while (availableSlots < SPACE_FOR_CAR) {
                     try {
                         System.out.println("Sorry... There are no slots available to park your Car - " + obj.getIdPlate() + "Please Standby." + "\n");
-                        wait(1000);
+                        wait(5000);
                     } catch (Exception e) {
                         System.out.println("Error: " + e);
                     }
@@ -74,7 +73,7 @@ public class PettahCarParkManager implements CarParkManager {
                 while (availableSlots < SPACE_FOR_CAR) {
                     try {
                         System.out.println("Sorry... There are no slots available to park your Van - " + obj.getIdPlate() + "Please Standby." + "\n");
-                        wait(1000);
+                        wait(5000);
                     } catch (Exception e) {
                         System.out.println("Error: " + e);
                     }
@@ -89,7 +88,7 @@ public class PettahCarParkManager implements CarParkManager {
                 while (availableSlots < SPACE_FOR_CAR) {
                     try {
                         System.out.println("Sorry... There are no slots available to park your Motor Bike - " + obj.getIdPlate() + "Please Standby." + "\n");
-                        wait(1000);
+                        wait(5000);
                     } catch (Exception e) {
                         System.out.println("Error: " + e);
                     }
@@ -104,7 +103,7 @@ public class PettahCarParkManager implements CarParkManager {
                 while (availableSlots < SPACE_FOR_CAR) {
                     try {
                         System.out.println("Sorry... There are no slots available to park your Lorry - " + obj.getIdPlate() + "Please Standby." + "\n");
-                        wait(1000);
+                        wait(5000);
                     } catch (Exception e) {
                         System.out.println("Error: " + e);
                     }
@@ -119,7 +118,7 @@ public class PettahCarParkManager implements CarParkManager {
                 while (availableSlots < SPACE_FOR_CAR) {
                     try {
                         System.out.println("Sorry... There are no slots available to park your Mini Lorry - " + obj.getIdPlate() + "Please Standby." + "\n");
-                        wait(1000);
+                        wait(5000);
                     } catch (Exception e) {
                         System.out.println("Error: " + e);
                     }
@@ -134,7 +133,7 @@ public class PettahCarParkManager implements CarParkManager {
                 while (availableSlots < SPACE_FOR_CAR) {
                     try {
                         System.out.println("Sorry... There are no slots available to park your Bus - " + obj.getIdPlate() + "Please Standby." + "\n");
-                        wait(1000);
+                        wait(5000);
                     } catch (Exception e) {
                         System.out.println("Error: " + e);
                     }
@@ -149,7 +148,7 @@ public class PettahCarParkManager implements CarParkManager {
                 while (availableSlots < SPACE_FOR_CAR) {
                     try {
                         System.out.println("Sorry... There are no slots available to park your Mini Bus - " + obj.getIdPlate() + "Please Standby." + "\n");
-                        wait(1000);
+                        wait(5000);
                     } catch (Exception e) {
                         System.out.println("Error: " + e);
                     }
