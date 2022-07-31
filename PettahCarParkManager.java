@@ -31,6 +31,11 @@ public class PettahCarParkManager implements CarParkManager {
     public PettahCarParkManager() {
     }
 
+    // Getters & Setters
+    public ArrayList<Vehicle> getListOfVehicle() {
+        return listOfVehicle;
+    }
+
     // Method which returns an object of same type
     public static PettahCarParkManager getInstance() {
         if (instance == null) {
@@ -57,7 +62,7 @@ public class PettahCarParkManager implements CarParkManager {
             if (obj instanceof Car) {
                 while (availableSlots < SPACE_FOR_CAR) {
                     try {
-                        System.out.println("Sorry... There are no slots available to park your Car - " + obj.getIdPlate() + "Please Standby." + "\n");
+                        System.out.println("Sorry... There are no slots available to park your Car - " + obj.getIdPlate() + ". Please Standby.");
                         wait(5000);
                     } catch (Exception e) {
                         System.out.println("Error: " + e);
@@ -165,9 +170,16 @@ public class PettahCarParkManager implements CarParkManager {
     }
 
     @Override
-    public void deleteVehicle(String IdPlate) {
+    public synchronized void deleteVehicle(String IdPlate) {
+        while (listOfVehicle.size() <= 0) {
+            try {
+                wait(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
         for (Vehicle item : listOfVehicle) {
-            // Checking for a particular vehicle with its' plate ID
+            // Checking for a particular vehicle with its plate ID
             if (item.getIdPlate().equals(IdPlate)) {
                 System.out.println("Vehicle Found.");
                 if (item instanceof Car) {

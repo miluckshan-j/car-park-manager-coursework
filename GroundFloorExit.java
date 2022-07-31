@@ -18,10 +18,12 @@ public class GroundFloorExit implements Runnable {
     @Override
     public void run() {
         while(true){
-            try {
-                pettahCarParkManager.deleteVehicle("WP-" + randomNumberGenerator(0, 50));
-            } catch (Exception e) {
-                e.printStackTrace();
+            if (pettahCarParkManager.getListOfVehicle().size() > 0) {
+                try {
+                    pettahCarParkManager.deleteVehicle("WP-" + randomNumberGenerator(0, 250));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
             try {
                 Thread.sleep(5000);
